@@ -118,8 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="sem_rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\SEMAFORO\sem_rojo.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="carro2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\SEMAFORO\carro2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\SEMAFORO\calles.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sem_amarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SEMAFORO\sem_amarillo.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,19 +130,19 @@
   <data name="carro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SEMAFORO\carro.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sem_verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\SEMAFORO\sem_verde.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sem_rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\SEMAFORO\sem_rojo.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calles" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\SEMAFORO\calles.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="carro2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\SEMAFORO\carro2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="carro4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\SEMAFORO\carro4.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="carro3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SEMAFORO\carro3.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="carro4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\SEMAFORO\carro4.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sem_verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\SEMAFORO\sem_verde.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calles1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calles.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
