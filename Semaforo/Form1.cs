@@ -346,9 +346,6 @@ namespace Semaforo
             int randomN = random.Next(0, 8);
             Point punto = new Point();
             punto = Puntos[randomN];
-            Console.WriteLine(punto);
-
-            Console.WriteLine(ListaCarros0[0].Name);
 
             if (randomN == 0) // 0 = Norte a Sur
             {
