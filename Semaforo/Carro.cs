@@ -7,52 +7,39 @@ using System.Windows.Forms;
 
 namespace Semaforo
 {
-    class Carro
+    public class Carro
     {
-        public Point posicionActual { get; set; }
-        public Point posicionDestino { get; set; }
-        public Point posicionInicial { get; set; }
-        public int direccion { get; set; }
-        public bool movimiento { get; set; }
-        public bool visible { get; set; }
-        public PictureBox imagen { get; set; }
+        public Point PosicionActual { get; set; }
+        public int Direccion { get; set; }
+        public int ListaInicial;
 
-        public Carro()
+        public Carro(Point posicionActual, int direccion, int listaInicial)
         {
+            PosicionActual = posicionActual;
+            Direccion = direccion;
+            ListaInicial = listaInicial;
         }
 
-        public void moverse(Carro car, Point fin)
+        public void Mover()
         {
-            if(car.direccion==0)
+            if (Direccion == 0) 
             {
-                while(fin.X >= car.posicionActual.X)
-                    car.posicionActual = new Point(car.posicionActual.X + 1,car.posicionActual.Y);
+                PosicionActual = new Point(PosicionActual.X, PosicionActual.Y+3);
             }
-            else if (car.direccion == 0)
+            else if (Direccion == 1)
             {
-                while (fin.X <= car.posicionActual.X)
-                    car.posicionActual = new Point(car.posicionActual.X - 1, car.posicionActual.Y);
+                PosicionActual = new Point(PosicionActual.X-3, PosicionActual.Y);
             }
-            else if (car.direccion == 1)
+            else if (Direccion == 2)
             {
-                while (fin.Y >= car.posicionActual.Y)
-                    car.posicionActual = new Point(car.posicionActual.X, car.posicionActual.Y + 1);
+                PosicionActual = new Point(PosicionActual.X, PosicionActual.Y-3);
             }
-            else
+            else if (Direccion == 3)
             {
-                while (fin.Y <= car.posicionActual.Y)
-                    car.posicionActual = new Point(car.posicionActual.X, car.posicionActual.Y - 1);
+                PosicionActual = new Point(PosicionActual.X+3, PosicionActual.Y);
             }
+
         }
 
-        public void mostrar(Carro car)
-        {
-            car.visible = true;
-        }
-
-        public void ocultar(Carro car)
-        {
-            car.visible = false;
-        }
     }
 }

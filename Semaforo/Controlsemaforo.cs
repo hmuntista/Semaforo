@@ -10,11 +10,7 @@ namespace Semaforo
 {
    public class Controlsemaforo: Form1
     {
-       public void Hilo1()
-       {
-      
-          
-       }
+  
         
     }
 }

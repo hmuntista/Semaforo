@@ -7,9 +7,10 @@ using System.Windows.Forms;
 
 namespace Semaforo
 {
-    class ControlDeTrafico
+    public static class ControlDeTrafico
     {
-        List<Carro> carrosActivos = new List<Carro>();
-        List<Cruce> cruces = new List<Cruce>();
+
+       
+
     }
 }
