@@ -140,7 +140,7 @@ namespace Semaforo
                 this.pictureBox18.Image = global::Semaforo.Properties.Resources.sem_verde;
                 this.pictureBox2.Image = global::Semaforo.Properties.Resources.sem_rojo;
                 this.pictureBox3.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                Thread.Sleep(800);
+                Thread.Sleep(30000);// timer calle
                 //semaforo.Abort();
                 //}
                 //for (int i = 0; i < 15;i++)
@@ -149,12 +149,12 @@ namespace Semaforo
                 this.pictureBox2.Image = global::Semaforo.Properties.Resources.sem_verde;
                 this.pictureBox3.Image = global::Semaforo.Properties.Resources.sem_rojo;
                 //}
-                Thread.Sleep(800);
+                Thread.Sleep(30000);
 
                 this.pictureBox18.Image = global::Semaforo.Properties.Resources.sem_rojo;
                 this.pictureBox2.Image = global::Semaforo.Properties.Resources.sem_rojo;
                 this.pictureBox3.Image = global::Semaforo.Properties.Resources.sem_verde;
-                Thread.Sleep(800);
+                Thread.Sleep(30000);
             }           
         }
         public void Hilo2()
@@ -165,17 +165,17 @@ namespace Semaforo
                     this.pictureBox21.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox5.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox4.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);// timer calle
 
                     this.pictureBox21.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox5.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox4.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
 
                     this.pictureBox21.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox5.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox4.Image = global::Semaforo.Properties.Resources.sem_verde;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
             }
         }
 
@@ -187,17 +187,17 @@ namespace Semaforo
                     this.pictureBox22.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox7.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox6.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);// timer calle
 
                     this.pictureBox22.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox7.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox6.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
 
                     this.pictureBox22.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox7.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox6.Image = global::Semaforo.Properties.Resources.sem_verde;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
             }
         }
 
@@ -209,17 +209,17 @@ namespace Semaforo
                     this.pictureBox24.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox9.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox8.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);// timer calle
 
                     this.pictureBox24.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox9.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox8.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
 
                     this.pictureBox24.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox9.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox8.Image = global::Semaforo.Properties.Resources.sem_verde;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
             }
         }
 
@@ -231,17 +231,17 @@ namespace Semaforo
                     this.pictureBox19.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox11.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox10.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);// timer calle
 
                     this.pictureBox19.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox11.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox10.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
 
                     this.pictureBox11.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox19.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox10.Image = global::Semaforo.Properties.Resources.sem_verde;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
             }
         }
 
@@ -253,17 +253,17 @@ namespace Semaforo
                     this.pictureBox20.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox13.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox12.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);// timer calle
 
                     this.pictureBox20.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox13.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox12.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
 
                     this.pictureBox20.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox13.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox12.Image = global::Semaforo.Properties.Resources.sem_verde;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
             }
         }
 
@@ -275,17 +275,17 @@ namespace Semaforo
                     this.pictureBox23.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox15.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox14.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);// timer calle
 
                     this.pictureBox23.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox15.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox14.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
 
                     this.pictureBox23.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox15.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox14.Image = global::Semaforo.Properties.Resources.sem_verde;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
             }
         }
 
@@ -297,17 +297,17 @@ namespace Semaforo
                     this.pictureBox25.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox17.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox16.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);// timer calle
 
                     this.pictureBox25.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox17.Image = global::Semaforo.Properties.Resources.sem_verde;
                     this.pictureBox16.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
 
                     this.pictureBox25.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox17.Image = global::Semaforo.Properties.Resources.sem_rojo;
                     this.pictureBox16.Image = global::Semaforo.Properties.Resources.sem_verde;
-                    Thread.Sleep(800);
+                    Thread.Sleep(30000);
             }
         }
 
