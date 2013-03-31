@@ -461,6 +461,10 @@ namespace Semaforo
                 }
 
             }
+            else if (SemaforoCalles == true && carro.Direccion == 0)
+            {
+                carro.parado = false;
+            }
 
             #endregion
 
@@ -485,6 +489,10 @@ namespace Semaforo
                     return false;
                 }
             }
+            else if (SemaforoAvenidaIzquierda == true && carro.Direccion == 1)
+            {
+                carro.parado = false;
+            }
 
             #endregion
 
@@ -508,6 +516,10 @@ namespace Semaforo
                 {
                     return false;
                 }
+            }
+            else if (SemafotoAvenidaDerecha == true && carro.Direccion == 3)
+            {
+                carro.parado = false;
             }
 
             #endregion
