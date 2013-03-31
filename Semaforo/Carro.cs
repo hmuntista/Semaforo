@@ -12,6 +12,7 @@ namespace Semaforo
         public Point PosicionActual { get; set; }
         public int Direccion { get; set; }
         public int ListaInicial;
+        public Boolean parado;
 
         public Carro(Point posicionActual, int direccion, int listaInicial)
         {

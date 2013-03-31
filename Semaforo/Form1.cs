@@ -42,10 +42,17 @@ namespace Semaforo
         bool SemaforoCalles = false;
         bool SemafotoAvenidaDerecha = false;
 
-        int puntoAvenidaIzquierda;
-        int puntoAvenidaDerecha;
-        int puntoCalleSur;
-        int puntoCalleSurNorte = 548;
+        int puntoAvenidaDerechaIzquierda1 = 995;
+        int puntoAvenidaDerechaIzquierda2 = 995;
+
+        int puntoAvenidaIzquierdaDerecha1 = 100;
+        int puntoAvenidaIzquierdaDerecha2 = 100;
+
+        int puntoCalleNorteSur1 = 105;
+        int puntoCalleNorteSur2 = 105;
+
+        int puntoCalleSurNorte1 = 553;
+        int puntoCalleSurNorte2 = 553;
 
         public Form1()
         {
@@ -106,6 +113,7 @@ namespace Semaforo
             ListaCarros7.Add(this.pictureBox46);
         }
 
+
         public void Inicializar()
         {
             Application.DoEvents();
@@ -152,7 +160,10 @@ namespace Semaforo
                 SemaforoAvenidaIzquierda = false;
                 SemafotoAvenidaDerecha = false;
                 
-                Console.WriteLine("Semaforo Calles");
+                puntoCalleSurNorte1 = 553;
+                puntoCalleSurNorte2 = 553;
+                puntoCalleNorteSur1 = 100;
+                puntoCalleNorteSur2 = 100;
 
                 Thread.Sleep(30000);// timer calle
 
@@ -164,8 +175,9 @@ namespace Semaforo
                 SemaforoAvenidaIzquierda = true;
                 SemafotoAvenidaDerecha = false;
 
-                Console.WriteLine("Semaforo Avenida Izquierda");
-
+                puntoAvenidaDerechaIzquierda1 = 995;
+                puntoAvenidaDerechaIzquierda2 = 995;
+              
                 Thread.Sleep(30000);
 
                 this.pictureBox18.Image = global::Semaforo.Properties.Resources.sem_rojo;
@@ -175,8 +187,8 @@ namespace Semaforo
                 SemaforoCalles = false;
                 SemaforoAvenidaIzquierda = false;
                 SemafotoAvenidaDerecha = true;
-
-                Console.WriteLine("Semaforo Avenida Derecha");
+                puntoAvenidaIzquierdaDerecha1 = 105;
+                puntoAvenidaIzquierdaDerecha2 = 105;
 
                 Thread.Sleep(30000);
             }           
@@ -372,29 +384,133 @@ namespace Semaforo
 
         private bool verificarSemaforos(Carro carro)
         {
+
+            #region Carros de sur a norte
+            
             if (SemaforoCalles == false && carro.Direccion == 2) //Sur a Norte
             {
-                if (carro.PosicionActual.Y >= 548 && carro.PosicionActual.Y <= 553)
+                
+                if (carro.PosicionActual.Y >= 548 && carro.PosicionActual.Y <= puntoCalleSurNorte1 && carro.ListaInicial == 5 && carro.parado == false)
+                {
+                    carro.parado = true;
+                    puntoCalleSurNorte1 += 26;
                     return false;
+                }
+                else if (carro.PosicionActual.Y >= 548 && carro.PosicionActual.Y <= puntoCalleSurNorte2 && carro.ListaInicial == 4 && carro.parado == false)
+                {
+                    carro.parado = true;
+                    puntoCalleSurNorte2 += 26;
+                    return false;
+                }
+                else if (carro.PosicionActual.Y >= 290 && carro.PosicionActual.Y <= puntoCalleSurNorte1-238 && carro.ListaInicial == 5 && carro.parado == false)
+                {
+                    carro.parado = true;
+                    puntoCalleSurNorte1 += 26;
+                    return false;
+                }
+                else if (carro.PosicionActual.Y >= 290 && carro.PosicionActual.Y <= puntoCalleSurNorte2-238 && carro.ListaInicial == 4 && carro.parado == false)
+                {
+                    carro.parado = true;
+                    puntoCalleSurNorte2 += 26;
+                    return false;
+                }
+                else if(carro.parado == true)
+                {
+                    return false;
+                }
+
+            }
+            else if (SemaforoCalles == true && carro.Direccion == 2)
+            {
+                carro.parado = false;
+            }
+            #endregion
+
+            #region Carros de norte a sur
+
+            if (SemaforoCalles == false && carro.Direccion == 0) // Norte a Sur
+            {
+
+                if (carro.PosicionActual.Y >= puntoCalleNorteSur1 && carro.PosicionActual.Y <= 105 && carro.ListaInicial == 0 && carro.parado == false)
+                {
+                    carro.parado = true;
+                    puntoCalleNorteSur1 -= 26;
+                    return false;
+                }
+                else if (carro.PosicionActual.Y >= puntoCalleNorteSur2 && carro.PosicionActual.Y <= 105 && carro.ListaInicial == 1 && carro.parado == false)
+                {
+                    carro.parado = true;
+                    puntoCalleNorteSur2 -= 26;
+                    return false;
+                }
+                else if (carro.PosicionActual.Y >= puntoCalleNorteSur1 + 240 && carro.PosicionActual.Y <= 360 && carro.ListaInicial == 0 && carro.parado == false)
+                {
+                    carro.parado = true;
+                    puntoCalleNorteSur1 -= 26;
+                    return false;
+                }
+                else if (carro.PosicionActual.Y >= puntoCalleNorteSur2 + 240 && carro.PosicionActual.Y <= 360 && carro.ListaInicial == 1 && carro.parado == false)
+                {
+                    carro.parado = true;
+                    puntoCalleNorteSur2 -= 26;
+                    return false;
+                }
+                else if (carro.parado == true)
+                {
+                    return false;
+                }
+
             }
 
-            if (SemaforoCalles == false && carro.Direccion == 0) //Norte a Sur
-            {
-                if (carro.PosicionActual.Y >= 100 && carro.PosicionActual.Y <= 105)
-                    return false;
-            }
+            #endregion
+
+            #region Carros de derecha a izquierda
 
             if (SemaforoAvenidaIzquierda == false && carro.Direccion == 1) //Derecha a Izquierda
             {
-                if (carro.PosicionActual.X >= 990 && carro.PosicionActual.X <= 995)
+                if (carro.PosicionActual.X >= 990 && carro.PosicionActual.X <= puntoAvenidaDerechaIzquierda1 && carro.ListaInicial == 2 && carro.parado == false)
+                {
+                    carro.parado = true;
+                    puntoAvenidaDerechaIzquierda1 += 30;
                     return false;
+                }
+                else if (carro.PosicionActual.X >= 990 && carro.PosicionActual.X <= puntoAvenidaDerechaIzquierda2 && carro.ListaInicial == 3 && carro.parado == false)
+                {
+                    carro.parado = true;
+                    puntoAvenidaDerechaIzquierda2 += 30;
+                    return false;
+                }
+                else if (carro.parado == true)
+                {
+                    return false;
+                }
             }
+
+            #endregion
+
+            #region Carros de izquierda a derecha
 
             if (SemafotoAvenidaDerecha == false && carro.Direccion == 3) //Izquierda a Derecha
             {
-                if (carro.PosicionActual.X >= 100 && carro.PosicionActual.X <= 105)
+                if (carro.PosicionActual.X >= puntoAvenidaIzquierdaDerecha1 && carro.PosicionActual.X <= 105 && carro.ListaInicial == 7 && carro.parado == false)
+                {
+                    carro.parado = true;
+                    puntoAvenidaIzquierdaDerecha1 -= 30;
                     return false;
+                }
+                else if (carro.PosicionActual.X >= puntoAvenidaIzquierdaDerecha2 && carro.PosicionActual.X <= 105 && carro.ListaInicial == 6 && carro.parado == false)
+                {
+                    carro.parado = true;
+                    puntoAvenidaIzquierdaDerecha2 -= 30;
+                    return false;
+                }
+                else if (carro.parado == true)
+                {
+                    return false;
+                }
             }
+
+            #endregion
 
             return true;
         }
@@ -457,6 +573,11 @@ namespace Semaforo
             }
 
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SemaforoCalles = false;
         }
 
 
