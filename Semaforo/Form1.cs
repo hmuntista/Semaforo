@@ -38,19 +38,28 @@ namespace Semaforo
         Thread semaforo7;
         Thread semaforo8;
 
+        bool SemaforoAvenidaIzquierda = false;
+        bool SemaforoCalles = false;
+        bool SemafotoAvenidaDerecha = false;
+
+        int puntoAvenidaIzquierda;
+        int puntoAvenidaDerecha;
+        int puntoCalleSur;
+        int puntoCalleSurNorte = 548;
+
         public Form1()
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
 
-            Puntos.Add(new Point(229, 41));
+            Puntos.Add(new Point(210, 41));
             Puntos.Add(new Point(651, 41));
-            Puntos.Add(new Point(1092, 198));
-            Puntos.Add(new Point(1092, 420));
-            Puntos.Add(new Point(867, 617));
+            Puntos.Add(new Point(1092, 189));
+            Puntos.Add(new Point(1092, 424));
+            Puntos.Add(new Point(883, 625));
             Puntos.Add(new Point(435, 617));
-            Puntos.Add(new Point(12, 458));
-            Puntos.Add(new Point(12, 235));
+            Puntos.Add(new Point(12, 465));
+            Puntos.Add(new Point(12, 232));
 
             ListaCarros0.Add(this.pictureBox30);
             ListaCarros0.Add(this.pictureBox34);
@@ -135,25 +144,40 @@ namespace Semaforo
             while (true)
             {
 
-               // for (int i = 0; i < 15;i++)
-                //{
                 this.pictureBox18.Image = global::Semaforo.Properties.Resources.sem_verde;
                 this.pictureBox2.Image = global::Semaforo.Properties.Resources.sem_rojo;
                 this.pictureBox3.Image = global::Semaforo.Properties.Resources.sem_rojo;
+
+                SemaforoCalles = true;
+                SemaforoAvenidaIzquierda = false;
+                SemafotoAvenidaDerecha = false;
+                
+                Console.WriteLine("Semaforo Calles");
+
                 Thread.Sleep(30000);// timer calle
-                //semaforo.Abort();
-                //}
-                //for (int i = 0; i < 15;i++)
-                //{
+
                 this.pictureBox18.Image = global::Semaforo.Properties.Resources.sem_rojo;
                 this.pictureBox2.Image = global::Semaforo.Properties.Resources.sem_verde;
                 this.pictureBox3.Image = global::Semaforo.Properties.Resources.sem_rojo;
-                //}
+
+                SemaforoCalles = false;
+                SemaforoAvenidaIzquierda = true;
+                SemafotoAvenidaDerecha = false;
+
+                Console.WriteLine("Semaforo Avenida Izquierda");
+
                 Thread.Sleep(30000);
 
                 this.pictureBox18.Image = global::Semaforo.Properties.Resources.sem_rojo;
                 this.pictureBox2.Image = global::Semaforo.Properties.Resources.sem_rojo;
                 this.pictureBox3.Image = global::Semaforo.Properties.Resources.sem_verde;
+
+                SemaforoCalles = false;
+                SemaforoAvenidaIzquierda = false;
+                SemafotoAvenidaDerecha = true;
+
+                Console.WriteLine("Semaforo Avenida Derecha");
+
                 Thread.Sleep(30000);
             }           
         }
@@ -313,6 +337,7 @@ namespace Semaforo
 
         private void button1_Click(object sender, EventArgs e)
         {
+            button1.Enabled = false;
             timer.Tick += new EventHandler(llamarCoche);
             timer.Interval = (100) * (1);              // Timer will tick evert second
             timer.Enabled = true;                       // Enable the timer
@@ -331,12 +356,47 @@ namespace Semaforo
 
             foreach (KeyValuePair<PictureBox, Carro> pair in Carros)
             {
-                pair.Value.Mover();
+                
+
+                if (verificarSemaforos(pair.Value))
+                {
+                    pair.Value.Mover();
+                }
+
                 pair.Key.Location = pair.Value.PosicionActual;
                 pair.Key.Show();
             }
 
             
+        }
+
+        private bool verificarSemaforos(Carro carro)
+        {
+            if (SemaforoCalles == false && carro.Direccion == 2) //Sur a Norte
+            {
+                if (carro.PosicionActual.Y >= 548 && carro.PosicionActual.Y <= 553)
+                    return false;
+            }
+
+            if (SemaforoCalles == false && carro.Direccion == 0) //Norte a Sur
+            {
+                if (carro.PosicionActual.Y >= 100 && carro.PosicionActual.Y <= 105)
+                    return false;
+            }
+
+            if (SemaforoAvenidaIzquierda == false && carro.Direccion == 1) //Derecha a Izquierda
+            {
+                if (carro.PosicionActual.X >= 990 && carro.PosicionActual.X <= 995)
+                    return false;
+            }
+
+            if (SemafotoAvenidaDerecha == false && carro.Direccion == 3) //Izquierda a Derecha
+            {
+                if (carro.PosicionActual.X >= 100 && carro.PosicionActual.X <= 105)
+                    return false;
+            }
+
+            return true;
         }
 
         public void generarCarro()
